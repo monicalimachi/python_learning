@@ -1,0 +1,25 @@
+import logging
+
+logger=logging.getLogger(__name__)          #Create logger with  global variable > the name  of the module >> in this case helper
+
+#Messages to propagate or not 
+""" logger.propagate=False                      # In False it doesn;t propagate to all places
+logger.info("Hello from helper") """
+
+#Create handler and file
+stream_h=logging.StreamHandler()
+file_h=logging.FileHandler('intermediate/logging/file.log')
+
+#add levels and the format
+stream_h.setLevel(logging.WARNING)
+file_h.setLevel(logging.ERROR)
+
+formatter=logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+stream_h.setFormatter(formatter)
+file_h.setFormatter(formatter)
+
+logger.addHandler(stream_h)
+logger.addHandler(file_h)
+
+logger.warning('this is a warning')
+logger.error('this is an error')
