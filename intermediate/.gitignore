@@ -13,3 +13,4 @@ logging/app.log
 logging/app.log.*
 logging/file.log
 logging/timed_test.log.*
+file.log
