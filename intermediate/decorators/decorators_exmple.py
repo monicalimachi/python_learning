@@ -1,8 +1,3 @@
-
-from curses import wrapper
-from unittest import result
-
-
 def start_end_decorator(func):
     def wrapper():
         print('Start')
@@ -26,18 +21,6 @@ def print_name():
 print_name()
 
 
-#Add Decorator with parameter
-def decorator_with_parameter(func):
-    def wrapper(*args,**kwargs):
-        print('Start')
-        result = func(*args,**kwargs)
-        print('End')
-        return result
-    return wrapper
 
-@decorator_with_parameter
-def added_5(x):
-    return x+5
 
-result=added_5(10)
-print(result)
+
