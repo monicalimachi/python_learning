@@ -4,4 +4,6 @@ logging/*.log
 logging/*.log.*
 logging/__pycache__
 /./__pycache__
-*/__pycache__
+*/__pycache__/
+__pycache__/
+__pycache__
