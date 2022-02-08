@@ -8,7 +8,7 @@ logger.info("Hello from helper") """
 
 #Create handler and file
 stream_h=logging.StreamHandler()
-file_h=logging.FileHandler('intermediate/logging/file.log')
+file_h=logging.FileHandler('file.log')
 
 #add levels and the format
 stream_h.setLevel(logging.WARNING)

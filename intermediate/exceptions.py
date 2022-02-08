@@ -68,7 +68,7 @@ def test_value(x):
         raise ValueTooSmallError('value is too small', x)
 
 try:
-    test_value(1)
+    test_value(200)
 except ValueTooHighError as e:
     print(e)
 except ValueTooSmallError as e:

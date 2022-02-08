@@ -18,13 +18,13 @@ logging.critical('This is a critical message') """
 #Calling to logging.conf usinf a file 
 # There is another option using dictionaries, check docs
 """ import logging.config
-logging.config.fileConfig('intermediate/logging/logging.conf')
+logging.config.fileConfig('logging/logging.conf')
 
 logger = logging.getLogger('simpleExample')
 logger.debug('This is a debug message') """
 
 
-#Raises and exception: two ways
+#Raises and exception to capture and trouble shooting issues: two ways
 """ try:
     a=[1,2,3]
     val=a[4]
@@ -51,22 +51,22 @@ logger= logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 #roll over after 2KB and keep backup logs: app.log , app.log.1 , app.log2, etc...
-handler=RotatingFileHandler('intermediate/logging/app.log',maxBytes=2000, backupCount=5)
+handler=RotatingFileHandler('logging/app.log',maxBytes=2000, backupCount=5)
 logger.addHandler(handler)
 
 for _ in range(10000):
     logger.info('Hello World') """
 
 
-
+# It will create logs accord the time, specific timestamp - python json logger is a library. 
 import time
 from logging.handlers import TimedRotatingFileHandler   # To Rotate  every some time
 
 logger=logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-#Time available: s,m,h,d,midnight,w0
-handler = TimedRotatingFileHandler('intermediate/logging/timed_test.log',when='s', interval=5,backupCount=5)
+#Time available: s,m,h,d,midnight,w0 means monday , w1 means tuesday
+handler = TimedRotatingFileHandler('logging/timed_test.log',when='s', interval=5,backupCount=5)
 logger.addHandler(handler)
 
 for _ in range(6):
