@@ -3,7 +3,13 @@
 logging/*.log
 logging/*.log.*
 logging/__pycache__
-/./__pycache__
+random_example/__pycache__/
 */__pycache__/
 __pycache__/
 __pycache__
+*.py[cod]
+*$py.class
+logging/app.log
+logging/app.log.*
+logging/file.log
+logging/timed_test.log.*
